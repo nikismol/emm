@@ -640,7 +640,7 @@ LEFT JOIN event_effectivity_mapping ON a.aircraftno_i=event_effectivity_mapping.
                                       AND rotables.psn=event_effectivity_mapping.psn
 JOIN doc_header ON event_effectivity_mapping.event_key_parent=doc_header.docno_i
 JOIN document_status ON event_effectivity_mapping.event_status=document_status.code
-WHERE a.ac_registr='73094'
+WHERE a.ac_registr=:ac_reg
   AND doc_header.release_state NOT IN (
          'U',
          'I',
