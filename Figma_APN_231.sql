@@ -617,7 +617,7 @@ LEFT JOIN mevt_header ON a.aircraftno_i = mevt_header.ref_key
                                                  AND doc_header.docno_i = mevt_header.mevt_key
                                                  AND mevt_header.mevt_type = 'DO'
 JOIN document_status ON event_effectivity_mapping.event_status=document_status.code
-WHERE a.ac_registr='73094'
+WHERE a.ac_registr=:ac_reg
   AND doc_header.ac_or_comp_doc='A'
   AND doc_header.release_state NOT IN (
          'U',
